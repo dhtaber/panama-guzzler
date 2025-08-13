@@ -53,16 +53,24 @@ export default function ThemeConverter() {
     2: null
   });
 
-  // UPDATED SOUND EFFECTS - Changed file paths only
-  const [playClick] = useSound('/click.mp3', {
-    volume: soundEnabled ? 0.3 : 0
-  });
-  const [playWordLock] = useSound('/word-correct.mp3', { 
-    volume: soundEnabled ? 0.5 : 0 
-  });
-  
-  // VICTORY SOUNDS ARRAY - Changed to single file
-  const [playVictory] = useSound('/victory.mp3', { volume: soundEnabled ? 0.6 : 0 });
+// UPDATED SOUND EFFECTS - With mobile support
+const [playClick] = useSound('/click.mp3', {
+  volume: 0.3,
+  soundEnabled: soundEnabled,
+  html5: true
+});
+
+const [playWordLock] = useSound('/word-correct.mp3', { 
+  volume: 0.5,
+  soundEnabled: soundEnabled,
+  html5: true
+});
+
+const [playVictory] = useSound('/victory.mp3', { 
+  volume: 0.6,
+  soundEnabled: soundEnabled,
+  html5: true
+});
 
   // =============================================================================
   // DATA LOADING AND INITIALIZATION
@@ -965,12 +973,9 @@ const renderLetterTiles = () => {
                   Clear
                 </button>
 
-                <button
-                  className="px-2 py-2 bg-orange-400 text-white rounded-lg cursor-default font-bold text-base shadow-md border-2 border-orange-500 min-w-28"
-                  disabled
-                >
-                  Attempts = {currentGameState.submissionCount}
-                </button>
+                <div className="px-3 py-2 text-gray-600 font-medium">
+                  Attempts: {currentGameState.submissionCount}
+                </div>
               </div>
 
               <button
