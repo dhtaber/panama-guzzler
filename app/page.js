@@ -956,8 +956,8 @@ const renderLetterTiles = () => {
                   type="submit"
                   disabled={currentGameState.currentWord.length === 0}
                   className={`px-2 py-2 rounded-lg font-semibold transition-all ${currentGameState.currentWord.length === 0
-                    ? 'bg-blue-200 text-blue-400 cursor-not-allowed'
-                    : 'bg-blue-500 text-white hover:bg-blue-600 shadow-md hover:shadow-lg'}`}
+                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    : 'bg-indigo-500 text-white hover:bg-indigo-600 shadow-md hover:shadow-lg'}`}
                 >
                   Submit
                 </button>
@@ -966,8 +966,8 @@ const renderLetterTiles = () => {
                   type="button"
                   onClick={clearWord}
                   className={`px-2 py-2 rounded-lg font-semibold transition-all ${currentGameState.currentWord.length === 0
-                    ? 'bg-red-200 text-red-400 cursor-not-allowed'
-                    : 'bg-red-500 text-white hover:bg-red-600 shadow-md hover:shadow-lg'}`}
+                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    : 'bg-gray-400 text-white hover:bg-gray-500 shadow-md hover:shadow-lg'}`}
                   disabled={currentGameState.currentWord.length === 0}
                 >
                   Clear
