@@ -824,11 +824,10 @@ const renderLetterTiles = () => {
         </button>
       ))}
       
-        {/* Shuffle tile - always last */}
+      {/* Shuffle tile - always last */}
       <button
         onClick={shuffleLetters}
-        className="w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-gradient-to-br from-orange-100 to-red-200 hover:from-orange-200 hover:to-red-300 transform hover:scale-105 active:scale-95"
-      >
+        className="w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-gradient-to-br from-orange-100 to-red-200 hover:from-orange-200 hover:to-red-300 transform hover:scale-105 active:scale-95"      >
         <span className="text-lg">🔀</span>
       </button>
     </div>
@@ -926,7 +925,7 @@ const renderLetterTiles = () => {
           
           <button
             onClick={() => setShowFeedback(!showFeedback)}
-            className={`px-3 py-1.5 rounded text-sm font-medium ml-2 transition-colors ${showFeedback ? 'bg-blue-200 text-blue-800 hover:bg-blue-300' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+            className={`px-3 py-1.5 rounded text-sm font-medium ml-2 transition-colors ${showFeedback ? 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
           >
             {showFeedback ? 'On' : 'Off'}
           </button>
