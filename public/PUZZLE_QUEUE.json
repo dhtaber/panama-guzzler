@@ -1,0 +1,201 @@
+{
+  "puzzles": [
+    {
+      "id": 1,
+      "theme": "PUT THAT IN YOUR PIPE AND SMOKE IT!",
+      "category": "",
+      "difficulty": "",
+      "creator": "",
+      "notes": "",
+      "letterPool": {
+        "P": 3,
+        "U": 2,
+        "T": 4,
+        "H": 1,
+        "A": 2,
+        "I": 3,
+        "N": 2,
+        "Y": 1,
+        "O": 2,
+        "R": 1,
+        "E": 2,
+        "D": 1,
+        "S": 1,
+        "M": 1,
+        "K": 1
+      },
+      "level1Solution": [
+        "IDAHO",
+        "MUPPETS",
+        "UNTIE",
+        "PORKY",
+        "TITAN"
+      ],
+      "level1Display": "IDAHO MUPPETS UNTIE PORKY TITAN",
+      "disguiseClue": "Piggy helps rescue portly CEO in the Gem State.",
+      "level2Solution": [
+        "PUT",
+        "THAT",
+        "IN",
+        "YOUR",
+        "PIPE",
+        "AND",
+        "SMOKE",
+        "IT"
+      ],
+      "level2Display": "PUT THAT IN YOUR PIPE AND SMOKE IT!",
+      "themeClue": "Deal with it! (old school)"
+    },
+    {
+      "id": 2,
+      "theme": "THE SHAWSHANK REDEMPTION",
+      "category": "",
+      "difficulty": "",
+      "creator": "",
+      "notes": "",
+      "letterPool": {
+        "T": 2,
+        "H": 3,
+        "E": 3,
+        "S": 2,
+        "A": 2,
+        "W": 1,
+        "N": 2,
+        "K": 1,
+        "R": 1,
+        "D": 1,
+        "M": 1,
+        "P": 1,
+        "I": 1,
+        "O": 1
+      },
+      "level1Solution": [
+        "TEN",
+        "HAWKS",
+        "HIDE",
+        "SMARTPHONE"
+      ],
+      "level1Display": "TEN HAWKS HIDE SMARTPHONE",
+      "disguiseClue": "Hoopsters suspected in digital disappearance",
+      "level2Solution": [
+        "THE",
+        "SHAWSHANK",
+        "REDEMPTION"
+      ],
+      "level2Display": "THE SHAWSHANK REDEMPTION",
+      "themeClue": "Sometimes escape is a masterpiece"
+    },
+    {
+      "id": 3,
+      "theme": "LIKE A ROLLING STONE",
+      "category": "",
+      "difficulty": "",
+      "creator": "",
+      "notes": "",
+      "letterPool": {
+        "L": 3,
+        "I": 2,
+        "K": 1,
+        "E": 2,
+        "A": 1,
+        "R": 1,
+        "O": 2,
+        "N": 2,
+        "G": 1,
+        "S": 1,
+        "T": 1
+      },
+      "level1Solution": [
+        "GLORIA",
+        "TELLS",
+        "NIKE",
+        "NO"
+      ],
+      "level1Display": "GLORIA TELLS NIKE NO",
+      "disguiseClue": "Coop's mom goes with Puma",
+      "level2Solution": [
+        "LIKE",
+        "A",
+        "ROLLING",
+        "STONE"
+      ],
+      "level2Display": "LIKE A ROLLING STONE",
+      "themeClue": "Fortune fades faster than fame"
+    },
+    {
+      "id": 4,
+      "theme": "THE MERCHANT OF VENICE",
+      "category": "",
+      "difficulty": "",
+      "creator": "",
+      "notes": "",
+      "letterPool": {
+        "T": 2,
+        "H": 2,
+        "E": 4,
+        "M": 1,
+        "R": 1,
+        "C": 2,
+        "A": 1,
+        "N": 2,
+        "O": 1,
+        "F": 1,
+        "V": 1,
+        "I": 1
+      },
+      "level1Solution": [
+        "FRONTMEN",
+        "HATE",
+        "CEVICHE"
+      ],
+      "level1Display": "FRONTMEN HATE CEVICHE",
+      "disguiseClue": "Apparently, lead singers and seafood don't mix",
+      "level2Solution": [
+        "THE",
+        "MERCHANT",
+        "OF",
+        "VENICE"
+      ],
+      "level2Display": "THE MERCHANT OF VENICE",
+      "themeClue": "In this tale, friendship may cost you a lot more than money"
+    },
+    {
+      "id": 5,
+      "theme": "FOOTLOOSE AND FANCY-FREE",
+      "category": "",
+      "difficulty": "",
+      "creator": "",
+      "notes": "",
+      "letterPool": {
+        "F": 3,
+        "O": 4,
+        "T": 1,
+        "L": 1,
+        "S": 1,
+        "E": 3,
+        "A": 2,
+        "N": 2,
+        "D": 1,
+        "C": 1,
+        "Y": 1,
+        "R": 1
+      },
+      "level1Solution": [
+        "SONY",
+        "FAN",
+        "FLOORED",
+        "FETA",
+        "CEO"
+      ],
+      "level1Display": "SONY FAN FLOORED FETA CEO",
+      "disguiseClue": "Cheese head knocked out by PlayStation enthusiast",
+      "level2Solution": [
+        "FOOTLOOSE",
+        "AND",
+        "FANCYFREE"
+      ],
+      "level2Display": "FOOTLOOSE AND FANCY-FREE",
+      "themeClue": "No ties, no worries"
+    }
+  ]
+}
