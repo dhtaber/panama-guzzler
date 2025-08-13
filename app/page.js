@@ -818,7 +818,7 @@ const renderLetterTiles = () => {
         <button
           key={tile.id}
           onClick={() => handleLetterClick(tile.id)}
-          className="w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-gradient-to-br from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 transform hover:scale-105 active:scale-95"
+          className="w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-gradient-to-br from-orange-400 to-pink-500 hover:from-orange-300 hover:to-pink-400 transform hover:scale-105 active:scale-95"
         >
           <span className="text-2xl font-black text-black drop-shadow-sm">{tile.letter}</span>
         </button>
