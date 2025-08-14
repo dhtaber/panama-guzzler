@@ -880,7 +880,7 @@ const renderLetterTiles = () => {
           <div className="flex rounded-lg p-2 gap-2 mx-auto">
             
             <button
-              onClick={() => setCurrentLevel(1)}
+              onClick={() => { setCurrentLevel(1); setFeedbackMessage(''); }}
               className={`flex-1 px-4 py-2 rounded-md text-base font-bold transition-colors ${currentLevel === 1
                 ? 'bg-blue-500 text-white shadow-md'
                 : 'bg-gray-200 text-gray-600 hover:bg-gray-300'}`}
@@ -889,7 +889,7 @@ const renderLetterTiles = () => {
             </button>
             
             <button
-              onClick={() => setCurrentLevel(2)}
+              onClick={() => { setCurrentLevel(2); setFeedbackMessage(''); }}
               className={`flex-1 px-4 py-2 rounded-md text-base font-bold transition-colors ${currentLevel === 2
                 ? 'bg-blue-500 text-white shadow-md'
                 : 'bg-gray-200 text-gray-600 hover:bg-gray-300'}`}
