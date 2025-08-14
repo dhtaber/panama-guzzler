@@ -818,7 +818,7 @@ const renderLetterTiles = () => {
         <button
           key={tile.id}
           onClick={() => handleLetterClick(tile.id)}
-          className="w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-gradient-to-br from-blue-200 to-indigo-300 hover:from-blue-300 hover:to-indigo-400 transform hover:scale-105 active:scale-95 active:ring-2 active:ring-green-400"
+          className="w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-gradient-to-br from-blue-200 to-indigo-300 hover:from-blue-300 hover:to-indigo-400 transform hover:scale-105 active:scale-95 active:ring-2 active:ring-indigo-400"
         >
           <span className="text-2xl font-black text-black drop-shadow-sm">{tile.letter}</span>
         </button>
@@ -827,7 +827,7 @@ const renderLetterTiles = () => {
       {/* Shuffle tile - always last */}
       <button
         onClick={shuffleLetters}
-        className="w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-indigo-100 hover:bg-indigo-200 transform hover:scale-105 active:scale-95 active:ring-2 active:ring-green-400"    >
+        className="w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-indigo-100 hover:bg-indigo-200 transform hover:scale-105 active:scale-95 active:ring-2 active:ring-indigo-400"    >
         <span className="text-lg">🔀</span>
       </button>
     </div>
