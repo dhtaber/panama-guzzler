@@ -776,7 +776,7 @@ const confirmReset = useCallback(() => {
                                 ? 'bg-white border border-blue-400 text-black shadow-sm' 
                                 : isHighlighted 
                                   ? 'bg-yellow-200 border border-yellow-400 shadow-md' 
-                                  : 'bg-gray-50 border border-gray-400 shadow-inner'
+                                  : 'bg-indigo-50 border border-indigo-400 shadow-inner'
                             }`}
                           >
                             {letter || (
@@ -1012,14 +1012,14 @@ const renderLetterTiles = () => {
 
                 <h3 className="text-lg font-bold text-gray-800 mb-2">Game Overview</h3>
                 <p className="text-gray-600 mb-4">
-                  Solve two puzzles using the same set of letters: <strong>The Disguise</strong> (typically a nonsensical phrase) and <strong>The Reveal</strong> (the actual theme like a movie, song, or famous phrase).
+                  Solve two puzzles using the same set of letters: <strong>The Disguise</strong> (typically a nonsensical phrase) and <strong>The Reveal</strong> (the actual theme like a movie, song, or well-known phrase).
                 </p>
 
                 <h3 className="text-lg font-bold text-gray-800 mb-2">How to Enter Words</h3>
                 <ul className="list-disc list-inside text-gray-600 space-y-1 ml-4 mb-4">
                   <li><strong>Click tiles</strong> or <strong>type on keyboard</strong> to form words</li>
                   <li>Only words matching empty slot lengths are accepted</li>
-                  <li>Enter multiple words with spaces (no feedback) or single words (with helpful feedback)</li>
+                  <li>Enter multiple words with spaces (no feedback) or single words (with feedback)</li>
                 </ul>
 
                 <h3 className="text-lg font-bold text-gray-800 mb-2">Scoring</h3>
@@ -1041,13 +1041,6 @@ const renderLetterTiles = () => {
                   <li>Solutions can have valid words as well as names/proper nouns</li>
                   <li>Each level tracks progress independently</li>
                   <li>Switch between levels anytime</li>
-                </ul>
-
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Tips</h3>
-                <ul className="list-disc list-inside text-gray-600 space-y-1 ml-4">
-                  <li>Start with shorter words</li>
-                  <li>Pay attention to the clues</li>
-                  <li>Use single-word entry to get feedback</li>
                 </ul>
 
               </div>

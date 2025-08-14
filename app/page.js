@@ -32,6 +32,7 @@ export default function ThemeConverter() {
   const [showHelp, setShowHelp] = useState(false);
   const [showFeedback, setShowFeedback] = useState(true);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
+  const [isShuffled, setIsShuffled] = useState(false);
 
 
   // Save sound preference whenever it changes
@@ -226,14 +227,22 @@ useEffect(() => {
 
   const shuffleLetters = useCallback(() => {
     const currentGameState = getCurrentGameState();
-    const shuffledLetters = shuffleArray(currentGameState.availableLetters);
 
-    updateCurrentLevelState({
-      availableLetters: shuffledLetters
-    });
+    if (isShuffled) {
+      // Sort alphabetically
+      const sorted = [...currentGameState.availableLetters].sort((a, b) =>
+        a.letter.localeCompare(b.letter));
+      updateCurrentLevelState({ availableLetters: sorted });
+      setIsShuffled(false);
+    } else {
+      // Random shuffle
+      const shuffled = shuffleArray(currentGameState.availableLetters);
+      updateCurrentLevelState({ availableLetters: shuffled });
+      setIsShuffled(true);
+    }
 
     playClick();
-  }, [getCurrentGameState, updateCurrentLevelState, shuffleArray, playClick]);
+  }, [getCurrentGameState, updateCurrentLevelState, shuffleArray, playClick, isShuffled]);
 
   // SMART LINE BREAKING FUNCTION WITH PUNCTUATION AWARENESS
   const distributeIntoLines = useCallback((wordUnits, maxCharsPerLine = 15) => {
@@ -828,7 +837,7 @@ const renderLetterTiles = () => {
       <button
         onClick={shuffleLetters}
         className="w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-indigo-100 hover:bg-indigo-200 transform hover:scale-105 active:scale-95 active:ring-2 active:ring-indigo-400"    >
-        <span className="text-lg">🔀</span>
+        <span className="text-lg">{isShuffled ? '🔤' : '🔀'}</span>
       </button>
     </div>
   );
