@@ -979,7 +979,7 @@ const renderLetterTiles = () => {
 
               <button
                 onClick = {resetLevel}
-                className="px-2 py-1 bg-red-100 hover:bg-red-200 rounded-lg text-sm font-semibold text-red-700 transition-colors shadow-sm"
+                className="px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-semibold text-gray-700 transition-colors shadow-sm"
               >
                 Reset
               </button>
