@@ -955,7 +955,7 @@ const renderLetterTiles = () => {
                   type="submit"
                   disabled={currentGameState.currentWord.length === 0}
                   className={`px-2 py-2 rounded-lg font-semibold transition-all ${currentGameState.currentWord.length === 0
-                    ? 'bg-indigo-200 text-gray-400 cursor-not-allowed'
+                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                     : 'bg-indigo-500 text-white hover:bg-indigo-600 shadow-md hover:shadow-lg transform hover:scale-105'}`}
                 >
                   Submit
