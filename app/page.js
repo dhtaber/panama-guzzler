@@ -972,7 +972,7 @@ const renderLetterTiles = () => {
                   Clear
                 </button>
 
-                <div className="px-3 py-2 text-gray-600 font-medium">
+                <div className="px-3 py-2 text-indigo-600 font-medium">
                   Attempts: {currentGameState.submissionCount}
                 </div>
               </div>
