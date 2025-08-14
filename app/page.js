@@ -776,7 +776,7 @@ const confirmReset = useCallback(() => {
                                 ? 'bg-white border border-blue-400 text-black shadow-sm' 
                                 : isHighlighted 
                                   ? 'bg-yellow-200 border border-yellow-400 shadow-md' 
-                                  : 'bg-gray-50 border border-gray-400 shadow-inner'
+                                  : 'bg-indigo-50 border border-indigo-400 shadow-inner'
                             }`}
                           >
                             {letter || (
