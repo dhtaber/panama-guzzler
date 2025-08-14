@@ -528,7 +528,21 @@ const parseDisplayString = useCallback((displayString, solutionWords) => {
     });
 
     if (isComplete) {
-      setTimeout(() => showVictoryMessages(updatedSubmissionCount), 500);
+      // Check if BOTH levels are complete
+      const otherLevel = currentLevel === 1 ? 2 : 1;
+      const bothComplete = levelStates[otherLevel]?.completed === true;
+
+      if (bothComplete) {
+        // BOTH levels done - show victory modal
+        setTimeout(() => showVictoryMessages(updatedSubmissionCount), 500);
+      } else {
+        // Just this level done - show encouragement
+        if (currentLevel === 1) {
+          setFeedbackMessage("🎉 Disguise Solved! Now reveal the theme!");
+        } else {
+          setFeedbackMessage("🎉 Reveal Solved! Now solve the disguise!");
+        }
+      }
     }
 
     setTimeout(() => processingSubmission.current = false, 0);
@@ -630,7 +644,21 @@ const parseDisplayString = useCallback((displayString, solutionWords) => {
     });
 
     if (isComplete) {
-      setTimeout(() => showVictoryMessages(updatedSubmissionCount), 500);
+      // Check if BOTH levels are complete
+      const otherLevel = currentLevel === 1 ? 2 : 1;
+      const bothComplete = levelStates[otherLevel]?.completed === true;
+
+      if (bothComplete) {
+        // BOTH levels done - show victory modal
+        setTimeout(() => showVictoryMessages(updatedSubmissionCount), 500);
+      } else {
+        // Just this level done - show encouragement
+        if (currentLevel === 1) {
+          setFeedbackMessage("🎉 Disguise Solved! Now reveal the theme!");
+        } else {
+          setFeedbackMessage("🎉 Reveal Solved! Now solve the disguise!");
+        }
+      }
     } else {
       setFeedbackMessage(`Correct! "${word}" placed in slot ${matchingSlot + 1}`);
     }
@@ -1057,7 +1085,6 @@ const renderLetterTiles = () => {
             </div>
           </div>
         )}
-
 
         {/* VICTORY MODAL */}
         {showVictory && (

@@ -440,7 +440,7 @@ const parseDisplayString = useCallback((displayString, solutionWords) => {
   // SIMPLIFIED VICTORY SYSTEM
   const showVictoryMessages = useCallback((submissionCount) => {
     playVictory();
-    setFeedbackMessage(`Congratulations! You solved the puzzle in ${submissionCount} attempts (words placed).`);
+    setShowVictory(true);  // Show modal instead of just message
   }, [playVictory]);
 
   // =============================================================================
@@ -1057,6 +1057,96 @@ const renderLetterTiles = () => {
             </div>
           </div>
         )}
+
+        {/* VICTORY MODAL */}
+        {showVictory && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-xl max-w-sm w-full shadow-2xl">
+              <div className="p-6">
+
+                {/* Celebration Header */}
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-2">🎉</div>
+                  <h2 className="text-2xl font-black text-gray-800">Puzzle Complete!</h2>
+                </div>
+
+                {/* Score Display */}
+                <div className="bg-indigo-50 rounded-lg p-4 mb-4">
+                  <div className="text-center">
+                    <p className="text-3xl font-black text-indigo-600 mb-2">
+                      {levelStates[1].submissionCount + levelStates[2].submissionCount} attempts
+                    </p>
+                    <div className="space-y-1 text-sm">
+                      <p className="text-gray-600">
+                        <span className="font-semibold">The Disguise:</span> {levelStates[1].submissionCount} attempts
+                      </p>
+                      <p className="text-gray-600">
+                        <span className="font-semibold">The Reveal:</span> {levelStates[2].submissionCount} attempts
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Star Rating */}
+                <div className="text-center mb-4">
+                  {levelStates[1].submissionCount + levelStates[2].submissionCount <= 10 ? (
+                    <div>
+                      <div className="text-2xl mb-1">⭐⭐⭐</div>
+                      <p className="text-sm text-gray-600">Outstanding!</p>
+                    </div>
+                  ) : levelStates[1].submissionCount + levelStates[2].submissionCount <= 15 ? (
+                    <div>
+                      <div className="text-2xl mb-1">⭐⭐</div>
+                      <p className="text-sm text-gray-600">Great job!</p>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="text-2xl mb-1">⭐</div>
+                      <p className="text-sm text-gray-600">You did it!</p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Share Button */}
+                <button
+                  onClick={() => {
+                    const totalAttempts = levelStates[1].submissionCount + levelStates[2].submissionCount;
+                    const shareText = `Panama Guzzler 🎩\n\nI solved today's puzzle in ${totalAttempts} attempts!\n🎯 Disguise: ${levelStates[1].submissionCount}\n🎭 Reveal: ${levelStates[2].submissionCount}\n\nPlay at: panama-guzzler.vercel.app`;
+
+                    navigator.clipboard.writeText(shareText);
+
+                    // Show copied feedback
+                    const button = event.target;
+                    const originalText = button.innerText;
+                    button.innerText = 'Copied!';
+                    button.classList.add('bg-green-500');
+                    button.classList.remove('bg-indigo-500');
+
+                    setTimeout(() => {
+                      button.innerText = originalText;
+                      button.classList.remove('bg-green-500');
+                      button.classList.add('bg-indigo-500');
+                    }, 2000);
+                  }}
+                  className="w-full py-3 bg-indigo-500 text-white rounded-lg font-bold hover:bg-indigo-600 transition-colors"
+                >
+                  📤 Share Your Result
+                </button>
+
+                {/* Close Button */}
+                <button
+                  onClick={() => setShowVictory(false)}
+                  className="w-full mt-3 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+                >
+                  Close
+                </button>
+
+              </div>
+            </div>
+          </div>
+        )}
+
+
 
         {/* RESET CONFIRMATION MODAL */}
         {showResetConfirm && (
