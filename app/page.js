@@ -869,7 +869,7 @@ const renderLetterTiles = () => {
           {/* RIGHT: Help button (question mark) */}
           <button
             onClick={() => setShowHelp(true)}
-            className="px-3 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg text-lg font-bold text-gray-700 transition-colors"
+            className="px-3 py-2 bg-indigo-100 hover:bg-indigo-200 rounded-lg text-lg font-medium text-indigo-600 transition-colors"
           >
             ?
           </button>
