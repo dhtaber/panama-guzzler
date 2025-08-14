@@ -849,7 +849,7 @@ const renderLetterTiles = () => {
           {/* LEFT: Sound button */}
           <button
             onClick={() => setSoundEnabled(!soundEnabled)}
-            className={`px-3 py-2 rounded-lg text-lg font-medium relative transition-colors ${soundEnabled ? 'bg-blue-100 text-blue-600 hover:bg-blue-200' : 'bg-gray-200 text-gray-600 hover:bg-gray-300'}`}
+            className={`px-3 py-2 rounded-lg text-lg font-medium relative transition-colors ${soundEnabled ? 'bg-indigo-100 text-indigo-600 hover:bg-indigo-200' : 'bg-gray-200 text-gray-600 hover:bg-gray-300'}`}
           >
             🔊
             {!soundEnabled && (
