@@ -827,7 +827,7 @@ const renderLetterTiles = () => {
       {/* Shuffle tile - always last */}
       <button
         onClick={shuffleLetters}
-        className="w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-gradient-to-br from-orange-100 to-red-200 hover:from-orange-200 hover:to-red-300 transform hover:scale-105 active:scale-95"      >
+        className="w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-indigo-100 hover:bg-indigo-200 transform hover:scale-105 active:scale-95"     >
         <span className="text-lg">🔀</span>
       </button>
     </div>
