@@ -75,7 +75,7 @@ export default function ThemeConverter() {
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [isShuffled, setIsShuffled] = useState(false);
   const [showVictory, setShowVictory] = useState(false);
-
+  const [animatingLetter, setAnimatingLetter] = useState(null);
 
   // Save sound preference whenever it changes
   useEffect(() => {
@@ -492,11 +492,18 @@ const parseDisplayString = useCallback((displayString, solutionWords) => {
     const currentGameState = getCurrentGameState();
     const tile = currentGameState.availableLetters.find(t => t.id === tileId);
     if (!tile || tile.used) return;
-    
+
+    // Start animation
+    setAnimatingLetter(tileId);
     playClick();
-    updateCurrentLevelState({
-      currentWord: currentGameState.currentWord + tile.letter
-    });
+
+    // Add letter after short delay for animation effect
+    setTimeout(() => {
+      updateCurrentLevelState({
+        currentWord: currentGameState.currentWord + tile.letter
+      });
+      setAnimatingLetter(null);
+    }, 200);
   }, [getCurrentGameState, updateCurrentLevelState, playClick]);
 
   const handleTyping = useCallback((newWord) => {
@@ -538,6 +545,10 @@ const parseDisplayString = useCallback((displayString, solutionWords) => {
       const matchingSlot = findMatchingSlot(word, newSlotsFilled);
       if (matchingSlot !== -1 && isValidWord(word)) {
         newSlotsFilled[matchingSlot] = word;
+
+        // Animate the slot filling
+        setHighlightedSlots([matchingSlot]);
+        setTimeout(() => setHighlightedSlots([]), 1000);
 
         // Remove letters from pool
         const lettersNeeded = {};
@@ -648,6 +659,10 @@ const parseDisplayString = useCallback((displayString, solutionWords) => {
 
     let newSlotsFilled = [...currentGameState.slotsFilled];
     newSlotsFilled[matchingSlot] = word;
+
+    // Animate the slot filling
+    setHighlightedSlots([matchingSlot]);
+    setTimeout(() => setHighlightedSlots([]), 1000);
 
     // Check if puzzle will be completed
     const willComplete = newSlotsFilled.every(slot => slot !== '');
@@ -878,22 +893,22 @@ const confirmReset = useCallback(() => {
   };
 
 
-// REPLACE the renderLetterTiles function with this fixed version:
-const renderLetterTiles = () => {
-  const currentGameState = getCurrentGameState();
-  const availableLetters = currentGameState.availableLetters.filter(tile => !tile.used);
-  
-  return (
-    <div className="flex gap-2 justify-center mb-2 flex-wrap">
-      {/* Render tiles in their current order (preserves shuffle) */}
-      {availableLetters.map(tile => (
-        <button
-          key={tile.id}
-          onClick={() => handleLetterClick(tile.id)}
-          className="w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-gradient-to-br from-blue-200 to-indigo-300 hover:from-blue-300 hover:to-indigo-400 transform hover:scale-105 active:scale-95 active:ring-2 active:ring-indigo-400"
-        >
-          <span className="text-2xl font-black text-black drop-shadow-sm">{tile.letter}</span>
-        </button>
+  // REPLACE the renderLetterTiles function with this fixed version:
+  const renderLetterTiles = () => {
+    const currentGameState = getCurrentGameState();
+    const availableLetters = currentGameState.availableLetters.filter(tile => !tile.used);
+
+    return (
+      <div className="flex gap-2 justify-center mb-2 flex-wrap">
+        {/* Render tiles in their current order (preserves shuffle) */}
+        {availableLetters.map(tile => (
+          <button
+            key={tile.id}
+            onClick={() => handleLetterClick(tile.id)}
+            className={`w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-gradient-to-br from-blue-200 to-indigo-300 hover:from-blue-300 hover:to-indigo-400 transform hover:scale-105 active:scale-95 active:ring-2 active:ring-indigo-400 ${animatingLetter === tile.id ? 'scale-75 opacity-50' : ''
+              }`}        >
+            <span className="text-2xl font-black text-black drop-shadow-sm">{tile.letter}</span>
+          </button>
       ))}
       
       {/* Shuffle tile - always last */}
