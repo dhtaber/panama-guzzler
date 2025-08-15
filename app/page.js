@@ -905,8 +905,17 @@ const confirmReset = useCallback(() => {
           <button
             key={tile.id}
             onClick={() => handleLetterClick(tile.id)}
-            className={`w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center bg-gradient-to-br from-blue-200 to-indigo-300 hover:from-blue-300 hover:to-indigo-400 transform hover:scale-105 active:scale-95 active:ring-2 active:ring-indigo-400 ${animatingLetter === tile.id ? 'scale-75 opacity-50' : ''
-              }`}        >
+            className={`
+    w-10 h-10 border border-gray-300 rounded-xl font-bold cursor-pointer 
+    transition-all duration-200 shadow-lg hover:shadow-xl 
+    flex items-center justify-center 
+    bg-gradient-to-br from-blue-200 to-indigo-300 
+    hover:from-blue-300 hover:to-indigo-400 
+    transform hover:scale-105 active:scale-95 
+    active:ring-2 active:ring-indigo-400 
+    ${animatingLetter === tile.id ? 'scale-50 opacity-10 bg-red-500 rotate-180' : ''}
+  `}
+          >
             <span className="text-2xl font-black text-black drop-shadow-sm">{tile.letter}</span>
           </button>
       ))}
