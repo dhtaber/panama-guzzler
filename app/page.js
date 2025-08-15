@@ -2,6 +2,47 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import useSound from 'use-sound';
 
+// Loading Skeleton Component
+const LoadingSkeleton = () => (
+  <div className="min-h-screen bg-gray-100 p-4">
+    <div className="max-w-md mx-auto">
+      {/* Logo skeleton */}
+      <div className="flex items-center justify-between mb-1">
+        <div className="w-12 h-12 bg-gray-200 rounded-lg animate-pulse"></div>
+        <div className="w-48 h-12 bg-gray-300 rounded animate-pulse"></div>
+        <div className="w-12 h-12 bg-gray-200 rounded-lg animate-pulse"></div>
+      </div>
+      
+      {/* Level buttons skeleton */}
+      <div className="flex gap-2 mb-1">
+        <div className="flex-1 h-10 bg-gray-200 rounded-md animate-pulse"></div>
+        <div className="flex-1 h-10 bg-gray-200 rounded-md animate-pulse"></div>
+      </div>
+      
+      {/* Clue box skeleton */}
+      <div className="h-16 bg-gray-200 rounded-lg mb-3 animate-pulse"></div>
+      
+      {/* Letter tiles skeleton */}
+      <div className="flex gap-2 justify-center mb-2 flex-wrap">
+        {[...Array(20)].map((_, i) => (
+          <div key={i} className="w-10 h-10 bg-gray-200 rounded-xl animate-pulse"></div>
+        ))}
+      </div>
+      
+      {/* Input skeleton */}
+      <div className="h-12 bg-gray-200 rounded-lg mb-2 animate-pulse"></div>
+      
+      {/* Buttons skeleton */}
+      <div className="flex gap-2 justify-center mb-4">
+        <div className="w-20 h-10 bg-gray-200 rounded-lg animate-pulse"></div>
+        <div className="w-20 h-10 bg-gray-200 rounded-lg animate-pulse"></div>
+        <div className="w-32 h-10 bg-gray-200 rounded-lg animate-pulse"></div>
+      </div>
+    </div>
+  </div>
+);
+
+
 export default function ThemeConverter() {
   // =============================================================================
   // STATE MANAGEMENT - UNIFIED AND SIMPLIFIED
@@ -715,14 +756,7 @@ const confirmReset = useCallback(() => {
   // =============================================================================
 
   if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-11 w-11 border-b-2 border-blue-500 mx-auto mb-4"></div>
-          <p className="text-lg font-medium">Loading puzzle...</p>
-        </div>
-      </div>
-    );
+    return <LoadingSkeleton />;
   }
 
   if (error) {
